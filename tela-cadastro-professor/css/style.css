@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.container {
+  display: flex;
+  margin-left: 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #ffff, #0066cc);
+}
+
+
+.cabecalho {
+  position: fixed; 
+  top: 0px; 
+  right: 10px; 
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.data-local {
+  position: absolute; 
+  top: 30px; 
+  right: 190px; 
+  left: 520px;
+  font-size: 19px;
+  color: #024a92; /* Cor do texto */
+  font-family: Arial, sans-serif;
+  z-index: 999; /* Garante que a data fique abaixo dos botões */
+}
+
+.btn-sair,
+.btn-config {
+  background-color: #f53f39; /* Cor de fundo vermelha */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center; 
+}
+
+
+.btn-sair:hover {
+  background-color: #0a4fcf; /* Cor de fundo quando o botão for clicado */
+}
+
+.btn-config:hover {
+  background-color: #183ee9;
+}
+
+
+.card {
+  background-color: #dde7e7;
+  padding: 60px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 320px;
+}
+
+.required-field {
+  color: red;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #35748d;
+  font-size: 24px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+
+.label-float-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.label-float {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.label-float input,
+.label-float select {
+  width: 100%;
+  padding: 10px;
+  padding-left: 35px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-right: 30px;
+}
+
+.label-float label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.label-float i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%) translateX(10);
+  color: #475963;
+  pointer-events: none;
+}
+
+button {
+  background-color: rgb(14, 113, 167);
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 12pt;
+  margin-top: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+  border: none;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-voltar {
+  background-color: rgb(255, 255, 255);
+  color: #0066cc;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-left: 1390px;
+}
+
+.label-float input[type="date"] {
+  padding-left: 35px; 
+}
+
+.label-float select {
+  padding-left: 35px; 
+}
+
+.btn-cadastrar:hover {
+  background-color: #2adf33;
+}
+
+.btn-limparCampos:hover {
+  background-color: #e22626;
+}
+
+.btn-config::after,
+.btn-sair::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(px); 
+  bottom: -30px;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.btn-config:hover::after,
+.btn-sair:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.sidebar {
+  width: 420px; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  height: 100vh; 
+  background-color:#0066cc;; 
+  color: #fff; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+/* Estilo para a logo */
+.sidebar .logo img {
+  width: 100%; 
+  height: auto;
+  margin-bottom: 16px;
+}
+
+/* Menu de navegação */
+.sidebar .menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: -55px;
+}
+
+.sidebar .menu ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar .menu ul li.has-submenu {
+  position: relative; 
+}
+
+.sidebar .menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block; 
+  padding: 5px 140px; 
+  padding-left: 130px; 
+  line-height: 30px; 
+  border-radius: 8px; 
+  border: 2px solid rgb(18, 167, 247); 
+  background-color: rgb(14, 113, 167);
+  transition: background-color 0.3s, transform 0.3s; 
+  white-space: nowrap; 
+}
+
+.bi-chevron-double-right {
+  font-size: 15px; 
+  color: #0ad7e6;
+  transition: transform 0.3s ease; 
+}
+
+
+.sidebar .menu ul li a:hover {
+  background-color: #79b2c9; /* Quando passar o mouse, muda o fundo */
+  transform: scale(1.05); /* Efeito de zoom sutil */
+}
+
+/* Submenu */
+.sidebar .menu ul li.has-submenu ul {
+  display: none;
+  list-style-type: none;
+  padding-left: 0;
+  position: absolute;
+  top: 130%;
+  left: 75%;
+  background-color: #5f98d1;
+  width: auto;
+  min-width: auto;
+  border-radius: 8px; /* Mantém a estilização arredondada */
+  padding: 5px 0;
+}
+
+.sidebar .menu ul li.has-submenu:hover > ul {
+  display: block; /* Exibe o submenu ao passar o mouse */
+}
+
+.sidebar .menu ul li.has-submenu:hover > a {
+  background-color: #79b2c9;  /* Destaca o item principal quando o mouse passa sobre */
+}
+
+/* Estilo para os itens do submenu */
+.sidebar .menu ul li.has-submenu ul li {
+  margin-bottom: 9px; /* Remove a margem inferior dos itens do submenu */
+  white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
+.sidebar .menu ul li.has-submenu ul li a {
+  padding: 5px 15px; /* Reduz o padding para que o submenu se ajuste ao texto */
+  line-height: 30px; /* Ajusta a altura da linha */
+  color: #fff; /* Cor do texto */
+  font-size: 14px; /* Tamanho da fonte */
+  display: block; 
+}
+
+
+/* Em telas médias, mude para uma coluna */
+@media (max-width: 992px) {
+  .label-float-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Em telas pequenas, ajuste o padding e margens */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Em telas muito pequenas (mobile), ajuste os botões e cabeçalho */
+@media (max-width: 576px) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .data-local {
+    position: static;
+    margin: 10px 0;
+  }
+  
+  .btn-voltar {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
